@@ -1,0 +1,65 @@
+li {
+  padding: 8px;
+  background-color: #4b4769;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  animation: enter 1s;
+}
+
+li strong {
+  font-size: 18px;
+}
+
+li div {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  right: 8px;
+  top: -10px;
+  gap: 8px;
+  transition: all 0.4s;
+}
+
+li div button {
+  background-color: #00c778;
+  border: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li div button:not(:first-child) {
+  background-color: rgb(242, 73, 73);
+}
+
+li:hover div {
+  top: 4px;
+  opacity: 1;
+}
+
+li.done {
+  filter: grayscale(0.6);
+}
+
+li.done strong {
+  text-decoration: line-through;
+}
+
+li.done div button:first-child {
+  background: #cacaca;
+}
+
+@keyframes enter {
+  from {
+    transform: translateX(-60px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
